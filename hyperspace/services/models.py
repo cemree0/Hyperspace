@@ -6,7 +6,7 @@ from django.utils.text import slugify
 #Parantez içine aldığın kısım (örneğin models.Model) senin sınıfının dayandığı temel yapıdır.
 class Service(models.Model):  # models.Model demek → "models modülünün içindeki Model sınıfı" demektir.
     title = models.CharField(max_length=100)
-    desciption =models.TextField()
+    description =models.TextField()
     icon_class = models.CharField(max_length=50)
     is_featured = models.BooleanField(default=False)
     slug = models.SlugField(unique=True, blank =True )
