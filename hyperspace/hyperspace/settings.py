@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-=c$ulc3eru@3h9m0n=i77cpb4h^-s95h+-#zwob@jk@i(^)&56
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']   # BUNUN İÇİNİ DE YENİ DOLDURDUM BOSTU NORMALDE ASAGIDAKIYLE AYNI ANDA EKLENİLDİ.
+
+#BUNU YENİ EKLEDİM PASSWORD SORUNU İÇİN
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
+
 
 
 # Application definition
@@ -38,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'services'
+    'services',
+    'blog'
 ]
 
 MIDDLEWARE = [
