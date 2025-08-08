@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from services.models import Service
+from blog.models import Blog
 
 def index(request):
 
@@ -15,10 +16,13 @@ def index(request):
    """
  
    featured_services = Service.objects.filter(is_featured= True)
+   latest_posts= Blog.objects.all()[:3]
 
    context = {                            
      'static_content': static_content, 
-     'featured_services' : featured_services
+     'featured_services': featured_services,
+     'latest_posts': latest_posts
+
    }
    #context burada python sozlugudur yani {} ile acılır içinde key ve value girilir mesela  'ad' : 'cemre' sonra bu HTML de <p>Merhaba {{ ad }}</p> olarak cagirilir ve cemre yazılır .
 #HTML şablonuna hangi verilerin gönderileceğini söyleyen sözlük  bu arada ismi context olmak zorunda degil ama sozluk haline getirilmelidir renderde işe yaraması için.
